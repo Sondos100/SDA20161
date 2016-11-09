@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CRS;
+package CRS.Interface;
 
+import CRS.Database.dbUser;
 
 /**
  *
@@ -19,9 +20,9 @@ public class loginScreen extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
     }
-    private boolean verifyUser(String username, String password){
+    private boolean verifyUser(String userName, String password){
         dbUser adbUser = new dbUser();
-        if(adbUser.verifyUser(username, password))
+        if(adbUser.verifyUser(userName, password))
             return true;
         else
             return false;
@@ -40,7 +41,7 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextUserName = new javax.swing.JTextField();
-        jtextPassword = new javax.swing.JPasswordField();
+        jTextPassword = new javax.swing.JPasswordField();
         jLabelError = new javax.swing.JLabel();
         jButtonOK = new javax.swing.JButton();
         jButtonExit = new javax.swing.JButton();
@@ -54,11 +55,11 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel2.setText("User Name:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Password:");
+        jLabel3.setText("Paswword:");
 
         jTextUserName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jtextPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabelError.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelError.setForeground(java.awt.Color.red);
@@ -79,50 +80,52 @@ public class loginScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
+                        .addGap(168, 168, 168)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                            .addComponent(jtextPassword)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextUserName)
+                                    .addComponent(jTextPassword)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 93, Short.MAX_VALUE)
                                 .addComponent(jButtonOK)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(77, 77, 77)
                                 .addComponent(jButtonExit)))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 38, Short.MAX_VALUE)
+                .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jtextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonExit)
                     .addComponent(jButtonOK))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,17 +133,16 @@ public class loginScreen extends javax.swing.JFrame {
 
     private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
         // TODO add your handling code here:
-        if(verifyUser(jTextUserName.getText(),jtextPassword.getText()))
-        {
-            optionsScreen anScreen = new optionsScreen();
-            anScreen.setVisible(true);
+        if(verifyUser(jTextUserName.getText(), jTextPassword.getText())){
+            optionsScreen apScreen = new optionsScreen();
+            apScreen.setVisible(true);
             setVisible(false);
         }
         else{
-            jLabelError.setText("Error user name or password");
             jTextUserName.setText("");
-            jtextPassword.setText("");
-        } 
+            jTextPassword.setText("");
+            jLabelError.setText("Error in User name or Pssword");
+        }
     }//GEN-LAST:event_jButtonOKActionPerformed
 
     /**
@@ -169,7 +171,6 @@ public class loginScreen extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(loginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -186,7 +187,7 @@ public class loginScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelError;
+    private javax.swing.JPasswordField jTextPassword;
     private javax.swing.JTextField jTextUserName;
-    private javax.swing.JPasswordField jtextPassword;
     // End of variables declaration//GEN-END:variables
 }
